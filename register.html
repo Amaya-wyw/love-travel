@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<div id="box">
+    <div class="left">
+        <div class="nor">
+            普通注册
+        </div>
+        <div class="reg-nor">
+            <form action="#">
+                <!--邮箱地址-->
+                <div class="register-box">
+                    <div class='box-default'>
+                        <label for="email">邮箱地址 ：</label>
+                        <input type="text" id='email' name='email' placeholder="请输入邮箱地址" onblur="checkemail()"/>
+                        <i></i>
+                    </div>
+                    <!--信息提示项-->
+                    <div class='tip'>
+                        <!--图标-->
+                        <i></i>
+                        <!--提示信息-->
+                        <span></span>
+                    </div>
+                </div>
+                <!--设置密码-->
+                <div class='register-box'>
+                    <!--验证表单项-->
+                    <div class='box-default'>
+                        <label for="pwd">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 ： </label>
+                        <input type="password" id='pwd' name='pwd' placeholder="请输入密码" onblur="checkpasswordlength()"/>
+                        <!--正确提示信息-->
+                        <i></i>
+                    </div>
+                    <!--信息提示项-->
+                    <div class='tip'>
+                        <i></i>
+                        <span></span>
+                    </div>
+                </div>
+                <!--确认密码-->
+                <div class='register-box'>
+                    <!--验证表单项-->
+                    <div class='box-default'>
+                        <label for="pwd2">确认密码 ： </label>
+                        <input type="password" id='pwd2' name='pwd2' placeholder="请再次输入密码" onblur="checkpassword()"/>
+                        <!--正确提示信息-->
+                        <i></i>
+                    </div>
+                    <!--信息提示项-->
+                    <div class='tip'>
+                        <i></i>
+                        <span></span>
+                    </div>
+                </div>
+                <!--信息提交-->
+                <div class='sub'>
+                    <input type="submit" id='btn' value="注册" onclick="zhuce();return false"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="right">
+        <div class="fast">
+            快速注册
+        </div>
+        <div class="clearfix">
+            <div><a href="" class="qq"></a></div>
+            <div><a href="" class="weibo"></a></div>
+            <div><a href="" class="taobao"></a></div>
+            <div><a href="" class="tengxun"></a></div>
+            <div><a href="" class="douban"></a></div>
+        </div>
+        <div class="go"><a href="">已有账号，现在去登录！</a></div>
+    </div>
+</div>
+<script>
+
+    function checkemail() {            // 功能函数
+        var temp = document.getElementById("email");
+        var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        if(temp.value==''){
+            alert('邮箱不能为空！');
+            temp.onfocus();
+            return false;
+        }
+        if (temp.value != "") {
+            if (!myreg.test(temp.value)) {
+                alert("email格式不正确，请重新输入！");
+                temp.onfocus();
+                return false;
+            }
+        }
+
+    }
+
+    function checkpasswordlength(){
+        var bbb = document.getElementById("pwd");
+        if(bbb.value==''){
+            alert('密码不能为空');
+            bbb.onfocus();
+            return false;
+        }
+        if(bbb.value.length<=6||bbb.value.length>=12)
+        {
+            alert("密码长度必须大于6小于12");
+            bbb.onfocus();
+            return false;
+        }
+    }
+
+    function checkpassword(){
+        var password1=document.getElementById("pwd");
+        var password2=document.getElementById("pwd2");
+        if (password2.value!==password1.value){
+            alert("两次输入的密码不相同！");
+            password2.onfocus();
+            return false;
+        }
+    }
+
+     function zhuce() {
+        var email = document.getElementById('email').value;
+        console.log(email);
+        var pwd = document.getElementById('pwd').value;
+        if(checkemail()!=false && checkpasswordlength()!=false && checkpassword()!=false){
+            alert('注册成功！');
+            document.cookie = 'email'+'='+email;
+            document.cookie = 'pwd'+'='+pwd;
+            window.location.href="login.html";
+        }else{
+            alert('信息填写不对喔');
+        }
+    }
+</script>
+</body>
+</html>

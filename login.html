@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div id="box" class="clearfix">
+    <div class="left">
+        <div class="title"><a href="">发现更多精彩!</a></div>
+        <div>
+            <div>
+                <a href="#" class="logo1">
+                    <img src="img/upload/log1.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#" class="logo2"><img src="img/upload/log2.jpg" alt=""></a>
+                <a href="#" class="logo3"><img src="img/upload/log3.jpg" alt=""></a>
+                <a href="#" class="logo4"> <img src="img/upload/log4.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="user">用户登陆</div>
+        <div>
+            <input type="text" placeholder="&nbsp;&nbsp;微博账号/QQ号码/电子邮箱 " id="mail">
+            <input type="password" placeholder="&nbsp;&nbsp;密码" id="password">
+            <div class="sub">
+                <input type="submit" value="登陆" onclick="register();return false">
+            </div>
+
+        </div>
+        <div class="clearfix">
+            <a href=""  class="qq"></a>
+            <a href=""  class="weibo"></a>
+        </div>
+        <div class="tips">
+            <span><a href="">&nbsp;意见反馈</a></span>
+            <span><a href="">&nbsp;注册新账号</a>|</span>
+            <span><a href="">&nbsp;忘记密码？</a>|</span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+
+    function getCookie(name) {
+        var strCookie = document.cookie;
+        var arrCookie = strCookie.split('; ');
+        for(var i=0;i<arrCookie.length;i++) {
+            var arr = arrCookie[i].split('=');
+            if (arr[0] == name) {
+                return arr[1];
+            }
+        }
+    }
+
+    function register(){
+        var mail = document.getElementById('mail').value;
+        console.log(mail);
+        var password  = document.getElementById('password').value;
+        console.log(password);
+        if(getCookie('email')==mail && getCookie('pwd')==password){
+            alert('登陆成功！');
+            window.location.href="index.html";
+        }else{
+            alert('用户名或密码错误!');
+        }
+    }
+</script>
+</html>

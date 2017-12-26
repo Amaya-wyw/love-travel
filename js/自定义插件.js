@@ -1,0 +1,12 @@
+//---jQuery=$
+//$.ajax()==jQuery.ajax()---全局
+//prototype属性---允许后期往对象中添加属性和方法
+//jQuery.fn=jQuery.prototype
+//extend扩展
+$.fn.extend({
+	alertVal:function(){
+		$(this).click(function(){
+			alert($(this).val());
+		});
+	}
+})

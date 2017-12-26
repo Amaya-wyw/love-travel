@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background: #F2F2F3;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    zoom: 1;   /*for IE 6,7*/
+}
+#box{
+    margin: 150px auto;
+    padding:15px;
+    width:880px;
+    height: 320px;
+    background: #fff;
+}
+#box .left{
+    float: left;
+    width:500px;
+}
+#box .left .title{
+    margin-bottom:4px ;
+}
+#box .left .title a{
+    color: #545454;
+}
+#box .left .logo1 img{
+    float: left;
+    width:190px;
+    margin-right: 5px;
+}
+#box .left .logo2 img{
+    width: 240px;
+    height:140px;
+}
+#box .left .logo3 img{
+    width: 120px;
+    height:140px;
+}
+#box .left .logo4 img{
+    width: 115px;
+    height:140px;
+}
+#box .right{
+    float: left;
+    padding:10px;
+    width: 350px;
+}
+#box .right .user {
+    height: 30px;
+    line-height: 30px;
+    color: #545454;
+    font-size: 16px;
+    font-family: '微软雅黑';
+    font-weight: 600;
+    border-bottom: 2px solid #D8D8D8;
+}
+#box .right input{
+    width: 320px;
+    height: 32px;
+    margin: 20px 0 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#box .right .sub{
+    text-align: center;
+}
+#box .right .sub input{
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background: #74C51A;
+}
+.qq{
+    display: block;
+    float:left;
+    width: 150px;
+    height:50px;
+    margin-top: 25px;
+    background: url("../img/head.png") -300px  -120px no-repeat ;
+}
+.qq:hover{
+    background: url("../img/head.png") -700px  -120px no-repeat ;
+}
+.weibo{
+    display: block;
+    float: right;
+    width: 175px;
+    height:50px;
+    margin-top: 25px;
+    background: url("../img/head.png") -460px  -120px no-repeat ;
+}
+.weibo:hover{
+    background: url("../img/head.png") -860px  -120px no-repeat ;
+}
+.tips{
+    margin-top: 10px;
+}
+.right span{
+    float: right;
+    color: #D8D8D8;
+}
+.right span a{
+    font-size: 12px;
+    color:blue;
+}
+
+/*动画*/
+.logo1 img,
+.logo2 img,
+.logo3 img,
+.logo4 img{
+    transition: all 0.5s linear;
+}
+.logo1 img:hover,
+.logo2 img:hover,
+.logo3 img:hover,
+.logo4 img:hover{
+    transform: scale(1.05);
+}
